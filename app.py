@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dự đoán sạt lở đất</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: auto; text-align: center; padding: 20px; }
-        h1 { color: #333; }
-        .data { font-size: 1.2em; margin: 20px 0; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Dự đoán sạt lở đất</h1>
-        <div class="data">
-            <p><strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C</p>
-            <p><strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %</p>
-	    <p><strong>Lượng mưa:</strong></p>
-	    <p><strong>Khả năng sạt lở đất:</strong></p>
-        </div>
-    </div>
-</body>
-</html>
+from flask import Flask, request, jsonify, render_template
+
+app = Flask(__name__)
+
+# Store the latest sensor data
+latest_data = {'temperature': None, 'humidity': None}
+
+# Route for ESP8266 to upload data
+@app.route('/upload', methods=['POST'])
+def upload_data():
+    global latest_data
+    data = request.json  # Receive JSON data from ESP8266
+    print(f"Received data: {data}")
+    latest_data = data   # Update the latest data
+    return jsonify({"status": "Data received"}), 200
+
+# Dashboard route to display the data
+@app.route('/')
+def dashboard():
+    return render_template('index.html', data=latest_data)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
