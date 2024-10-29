@@ -1,18 +1,25 @@
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-# Route to handle data POSTed by ESP8266
-@app.route('/upload', methods=['POST'])
-def upload_data():
-    data = request.json  # ESP8266 could send JSON data
-    print(f"Received data: {data}")
-    return jsonify({"status": "Data received"}), 200
-
-# Web interface to display data (could be a dashboard)
-@app.route('/')
-def dashboard():
-    return "<h1>Landslide Prediction Dashboard</h1>"
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landslide Prediction Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; text-align: center; padding: 20px; }
+        h1 { color: #333; }
+        .data { font-size: 1.2em; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dự đoán sạt lở đất</h1>
+        <div class="data">
+            <p><strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C</p>
+            <p><strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %</p>
+	    <p><strong>Lượng mưa:</strong></p>
+	    <p><strong>Khả năng sạt lở đất:</strong></p>
+        </div>
+    </div>
+</body>
+</html>
