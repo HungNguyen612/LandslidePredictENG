@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landslide Prediction Dashboard</title>
+    <title>Dự đoán sạt lở đất</title>
     <style>
         body { font-family: Arial, sans-serif; }
         .container { max-width: 600px; margin: auto; text-align: center; padding: 20px; }
