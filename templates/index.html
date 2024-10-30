@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandslideAlert VN</title>
+    <header>
+    <a href="index.html">
+        <img src="https://lh3.googleusercontent.com/chat_attachment/AP1Ws4t4B_99g-kq2yar6pFpR2p0Hyc93fc7biomoliErLNPgcdffMvcWAaQWORAcvU7RSNhA3UN9ydSZ5oyYCcnApHCmkQIsdIG_xCflqzYmdL33S5OB3ZodXZgO0qRXNz7KPoDnchqwb0z_pidOygfU51XC5l-Huk-uS4mUt8n4vmFWTU2eYXYeXeVdIHHPx1pW-EnZ35pb3H6XVSih0QQPv1FEJhfJhjq44_hrtxHqD8Gv9tsm4NwIq1CgetruCq0hewKcA8b-n5L0AvCFHU2e6v0qlXIFF3j2jNLXtK0ox0uXdQeocmgwEKqW4hbAqGAWs8=w1366-h633" alt="Website Logo" class="logo">
+    </a>
+</header>
     <link rel="stylesheet" href="index.css">
     <style>
 	body { font-family: Arial, sans-serif; }
         .container { max-width: 600px; margin: auto; text-align: center; padding: 20px; color: red}
         h1 { color: #333; }
         .data { font-size: 1.2em; margin: 20px 0; }
+	    .logo {
+    width: 150px; /* Adjust to your preferred size */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Centers it in the header */
+}
+
     </style>
 
 </head>
@@ -19,8 +31,8 @@
         <div class="data">
             <p><strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C</p>
             <p><strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %</p>
-	    <p><strong>Lượng mưa:No data mm </strong></p>
-	    <p><strong>Khả năng sạt lở đất: No data %</strong></p>
+	    <p><strong>Lượng mưa:</strong>No data mm </p>
+	    <p><strong>Khả năng sạt lở đất:</strong> No data %</p>
         </div>
     </div>
 </body>
