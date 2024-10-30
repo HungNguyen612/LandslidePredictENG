@@ -15,11 +15,23 @@
     <div class="container">
         <h1>Dự đoán sạt lở đất</h1>
         <div class="data">
-            <p><strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C</p>
-            <p><strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %</p>
-	    <p><strong>Lượng mưa:</strong>No data mm </p>
-	    <p><strong>Khả năng sạt lở đất:</strong> No data %</p>
-	    <p><strong>Vị trí đo:</strong> No data %</p>
+            <ul>
+  <li>
+    <strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
+  </li>
+  <li>
+    <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
+  </li>
+  <li>
+    <strong>Lượng mưa:</strong> No data mm
+  </li>
+  <li>
+    <strong>Khả năng sạt lở đất:</strong> No data %
+  </li>
+  <li>
+    <strong>Vị trí đo:</strong> No data %
+  </li>
+</ul>
 	<div id="Location Mark">	
 	<img src="https://ibb.co/zxC5HLC" alt="Location mark" style="width: 20px; height: 20px;">
 	</div>
