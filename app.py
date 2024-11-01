@@ -17,7 +17,7 @@ def upload_data():
 # Dashboard route to display the data
 @app.route('/')
 def dashboard():
-    return render_template('index2.html', data=latest_data)
+    return render_template('index.html', data=latest_data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
