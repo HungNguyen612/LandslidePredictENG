@@ -577,6 +577,18 @@
 
 						// Unmark element as moved.
 							$e.removeData(key);
+						.sidebar {
+ 						 float: left;
+  						width: 15%;
+						  height: 100%;
+						  background-color: #a52a2a;
+						  padding: 20px;
+						}
+						
+						.content {
+						  margin-left: 20%;
+						  padding: 20px;
+						}
 
 					}
 
