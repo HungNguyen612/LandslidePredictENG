@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandslideAlert VN</title>
     <link rel="icon" type="image/webp" href="static/Logo 1.webp">
 
+    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="static/index.css">
-
 </head>
+
 <body>
-    <div class="container">
-        <h1>Dự đoán sạt lở đất</h1>
-        <div class="data">
-            <ul>
-  <li>
-    <strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
-  </li>
-  <li>
-    <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
-  </li>
-  <li>
-    <strong>Lượng mưa:</strong> No data mm
-  </li>
-  <li>
-    <strong>Khả năng sạt lở đất:</strong> No data %
-  </li>
-  <li>
-    <strong>Vị trí đo:</strong> No data %
-  </li>
-</ul>
+    <!-- Main content section -->
+    <div id="header" class="style2">
+        <div class="inner">
+            <h1>Dự đoán sạt lở đất</h1>
+            <p>Welcome to the landslide prediction tool</p>
+        </div>
+    </div>
+
+    <div class="main style1">
+        <div class="container">
+            <div class="data">
+                <ul>
+                    <li>
+                        <strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
+                    </li>
+                    <li>
+                        <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
+                    </li>
+                    <li>
+                        <strong>Lượng mưa:</strong> No data mm
+                    </li>
+                    <li>
+                        <strong>Khả năng sạt lở đất:</strong> No data %
+                    </li>
+                    <li>
+                        <strong>Vị trí đo:</strong> No data
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="style2">
+        <div class="container">
+            <div class="copyright">
+                <ul>
+                    <li>&copy; 2024 LandslideAlert. All rights reserved.</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
