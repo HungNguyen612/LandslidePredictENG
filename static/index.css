@@ -3514,8 +3514,9 @@ input, select, textarea {
 	font-size: calc(10px + 2vmin);
 	color: white;
 	}
-// sidebar
+	// sidebar
 import React, { useState } from 'react'
+import logo from 'Logo 1.webp';
 export default function Sidebar() {
 
   const [open, setOpen] = useState(true)
@@ -3549,9 +3550,8 @@ export default function Sidebar() {
       {/* footer */}
       <div className='flex items-center gap-2 px-3 py-2'>
         <div><FaUserCircle size={30} /></div>
-        <div className={`leading-5 ${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>
-          <p>Saheb</p>
-          <span className='text-xs'>saheb@gmail.com</span>
+        <div className={`leading-5 ${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}
+          <span className='text-xs'>hello</span>
 
         </div>
       </div>
