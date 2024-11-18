@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 # Store the latest sensor data
-latest_data = {'temperature': None, 'humidity': None}
+latest_data = {'temperature': None, 'humidity': None, 'rain': None, 'landslide-risk': None}
 
 # Route for ESP8266 to upload data
 @app.route('/upload', methods=['POST'])
