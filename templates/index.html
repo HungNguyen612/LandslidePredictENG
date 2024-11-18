@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LandslideAlert</title>
+    <title>LandslideAlert VN</title>
     <link rel="icon" type="image/webp" href="static/Save.webp">
 
     <!-- Link to the external CSS file -->
@@ -13,8 +13,9 @@
 
 <body>
     <!-- Main content section -->
-    <button id="language-toggle" aria-label="Toggle Language">VN / EN</button>
+     <button id="language-toggle">Language</button>
     <div id="header" class="style2">
+       
         <div class="inner">
             <h1 class="main-title" data-key="main-title">Dự đoán sạt lở đất</h1>
             <p data-key="forecast-info">Thông tin dự báo</p>
@@ -26,29 +27,25 @@
             <div class="data">
                 <ul>
                     <li data-key="temperature">
-                        <strong data-key="temperature-label">Nhiệt độ:</strong>
-                        {{ data['temperature'] if data['temperature'] else 'No data' }} °C
+                        <strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
                     </li>
                     <li data-key="humidity">
-                        <strong data-key="humidity-label">Độ ẩm:</strong>
-                        {{ data['humidity'] if data['humidity'] else 'No data' }} %
+                        <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
                     </li>
                     <li data-key="rain">
-                        <strong data-key="rain-label">Lượng mưa:</strong>
-                        {{ data['rain'] if data['rain'] else 'No data' }} mm
+                        <strong>Lượng mưa:</strong> {{ data['rain'] if data['rain'] else 'No data' }} mm
                     </li>
                     <li data-key="location">
-                        <strong data-key="location-label">Vị trí đo:</strong> No data
+                        <strong>Vị trí đo:</strong> No data
                     </li>
                     <li data-key="slope">
-                        <strong data-key="slope-label">Độ dốc:</strong> No data
+                        <strong>Độ dốc:</strong> No data
                     </li>
                     <li data-key="vegetation">
-                        <strong data-key="vegetation-label">Độ phủ thực vật:</strong> No data
+                        <strong>Độ phủ thực vật:</strong> No data
                     </li>
                     <li data-key="landslide-risk">
-                        <strong data-key="landslide-risk-label">Khả năng sạt lở đất:</strong>
-                        {{ data['landslide-risk'] if data['landslide-risk'] else 'No data' }} %
+                        <strong>Khả năng sạt lở đất:</strong> {{ data['landslide-risk'] if data['landslide-risk'] else 'No data' }} %
                     </li>
                 </ul>
             </div>
@@ -59,7 +56,7 @@
         <div class="container">
             <div class="copyright">
                 <ul>
-                    <li data-key="footer">&copy; 2024 LandslideAlert VN. Tất cả các quyền được bảo lưu.</li>
+                    <li data-key="footer">&copy; 2024 LandslideAlert VN. All rights reserved.</li>
                 </ul>
             </div>
         </div>
@@ -71,26 +68,26 @@
             en: {
                 "main-title": "Landslide Prediction",
                 "forecast-info": "Forecast Information",
-                "temperature-label": "Temperature:",
-                "humidity-label": "Humidity:",
-                "rain-label": "Rainfall:",
-                "location-label": "Measurement Location:",
-                "slope-label": "Slope:",
-                "vegetation-label": "Vegetation Cover:",
-                "landslide-risk-label": "Landslide Risk:",
+                "temperature": "Temperature:",
+                "humidity": "Humidity:",
+                "rain": "Rainfall:",
+                "location": "Measurement Location:",
+                "slope": "Slope:",
+                "vegetation": "Vegetation Cover:",
+                "landslide-risk": "Landslide Risk:",
                 "footer": "&copy; 2024 LandslideAlert. All rights reserved."
             },
             vn: {
                 "main-title": "Dự đoán sạt lở đất",
                 "forecast-info": "Thông tin dự báo",
-                "temperature-label": "Nhiệt độ:",
-                "humidity-label": "Độ ẩm:",
-                "rain-label": "Lượng mưa:",
-                "location-label": "Vị trí đo:",
-                "slope-label": "Độ dốc:",
-                "vegetation-label": "Độ phủ thực vật:",
-                "landslide-risk-label": "Khả năng sạt lở đất:",
-                "footer": "&copy; 2024 LandslideAlert VN. Tất cả các quyền được bảo lưu."
+                "temperature": "Nhiệt độ:",
+                "humidity": "Độ ẩm:",
+                "rain": "Lượng mưa:",
+                "location": "Vị trí đo:",
+                "slope": "Độ dốc:",
+                "vegetation": "Độ phủ thực vật:",
+                "landslide-risk": "Khả năng sạt lở đất:",
+                "footer": "&copy; 2024 LandslideAlert. Tất cả các quyền được bảo lưu."
             }
         };
 
@@ -101,6 +98,7 @@
         toggleButton.addEventListener('click', () => {
             currentLanguage = currentLanguage === 'vn' ? 'en' : 'vn';
             updateLanguage();
+            console.log("Button pressed");
         });
 
         // Function to update language
