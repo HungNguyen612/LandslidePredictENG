@@ -33,7 +33,7 @@
                         <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
                     </li>
                     <li data-key="rain">
-                        <strong>Lượng mưa:</strong> No data mm
+                        <strong>Lượng mưa:</strong> {{ data['rain'] if data['rain'] else 'No data' }} mm
                     </li>
                     <li data-key="location">
                         <strong>Vị trí đo:</strong> No data
@@ -45,7 +45,7 @@
                         <strong>Độ phủ thực vật:</strong> No data
                     </li>
                     <li data-key="landslide-risk">
-                        <strong>Khả năng sạt lở đất:</strong> No data %
+                        <strong>Khả năng sạt lở đất:</strong> {{ data['landslide-risk'] if data['landslide-risk'] else 'No data' }} %
                     </li>
                 </ul>
             </div>
