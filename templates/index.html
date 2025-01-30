@@ -16,9 +16,9 @@
     <div id="header" class="style2">
        
         <div class="inner">
-            <button id="language-toggle">EN/VN</button>
-            <h1 class="main-title" data-key="main-title">Dự đoán sạt lở đất</h1>
-            <p data-key="forecast-info">Thông tin dự báo</p>
+            <button a="https://landslide-prediction-bksv.onrender.com">VN</button>
+            <h1 class="main-title" data-key="main-title">Landslide Prediction</h1>
+            <p data-key="forecast-info">Prediction informaton</p>
         </div>
     </div>
 
@@ -27,25 +27,25 @@
             <div class="data">
                 <ul>
                     <li data-key="temperature">
-                        <strong>Nhiệt độ:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
+                        <strong>Temperature:</strong> {{ data['temperature'] if data['temperature'] else 'No data' }} °C
                     </li>
                     <li data-key="humidity">
-                        <strong>Độ ẩm:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
+                        <strong>Humidity:</strong> {{ data['humidity'] if data['humidity'] else 'No data' }} %
                     </li>
                     <li data-key="rain">
-                        <strong>Lượng mưa:</strong> {{ data['rain'] if data['rain'] else 'No data' }} mm
+                        <strong>Rain:</strong> {{ data['rain'] if data['rain'] else 'No data' }} mm
                     </li>
                     <li data-key="location">
-                        <strong>Vị trí đo:</strong> Việt Nam
+                        <strong>Location:</strong> Vietnam
                     </li>
                     <li data-key="slope">
-                        <strong>Độ dốc:</strong> No data
+                        <strong>Slope:</strong> No data
                     </li>
                     <li data-key="vegetation">
-                        <strong>Độ phủ thực vật:</strong> No data
+                        <strong>Vegetation:</strong> No data
                     </li>
                     <li data-key="landslide-risk">
-                        <strong>Khả năng sạt lở đất:</strong> {{ data['landslide-risk'] if data['landslide-risk'] else 'No data' }} %
+                        <strong>Landslide probability</strong>:</strong> {{ data['landslide-risk'] if data['landslide-risk'] else 'No data' }} %
                     </li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
         <div class="container">
             <div class="copyright">
                 <ul>
-                    <li data-key="footer">&copy; 2024 LandslideAlert VN. All rights reserved.</li>
+                    <li data-key="footer">&copy; 2024 LandslideAlert EN. All rights reserved.</li>
                 </ul>
             </div>
         </div>
